@@ -59,7 +59,7 @@ Median price is approximately 50€ per night. However, the data is heavily skew
 
 Price distribution by room type and top 20 most expensive neighborhoods (median, min. 50 listings):
 
-![Bivariate Analysis](images/01_Analisis_Bivariante.png)
+![Bivariate Analysis](images/02_Analisis_Bivariante.png)
 
 Geographic distribution of listings in Madrid, colored by price:
 
@@ -181,7 +181,7 @@ El precio mediano es de unos 50€/noche, con fuerte asimetría a la derecha, es
 
 Distribución de precio por tipo de habitación y top 20 barrios más caros (mediana, min. 50 listings):
 
-![Análisis Bivariante](images/01_Analisis_Bivariante.png)
+![Análisis Bivariante](images/02_Analisis_Bivariante.png)
 
 Distribución geográfica de los listings en Madrid, coloreados por precio:
 
