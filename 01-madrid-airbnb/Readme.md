@@ -55,11 +55,11 @@ To analyze the short-term rentals market in Madrid by using Airbnb listing data.
 
 Median price is approximately 50€ per night. However, the data is heavily skewed to the right. Most of the listings are affordable, while a few are luxury listings. Entire home/apt is the dominant type of accommodation (~11,300 listings), followed by Private room (~7,800). Most of the listings are concentrated in the neighborhoods of Embajadores, Universidad, and Palacio. There is a cluster of listings where the minimum stay is 30 nights, indicating the presence of long-term rentals.
 
-![Univariate Analysis](images/01_analisis_univariante.png)
+![Univariate Analysis](images/01_Analisis_Univariante.png)
 
 Price distribution by room type and top 20 most expensive neighborhoods (median, min. 50 listings):
 
-![Bivariate Analysis](images/02_analisis_bivariante.png)
+![Bivariate Analysis](images/01_Analisis_Bivariante.png)
 
 Geographic distribution of listings in Madrid, colored by price:
 
@@ -69,7 +69,7 @@ Geographic distribution of listings in Madrid, colored by price:
 
 Numerical values show very low correlation with price (all values below 0.04), reinforcing that price is highly influenced by categorical attributes such as room type and neighborhood.
 
-![Correlation Matrix](images/04_correlaciones.png)
+![Correlation Matrix](images/04_matriz_de_correlaciones.png)
 
 #### Machine Learning
 
@@ -85,23 +85,23 @@ Five analytical queries were made on this data set:
 
 **Query 1 — Top 20 neighborhoods by listing count:**
 
-![Query 1](images/query_1.png)
+![Query 1](images/Query_1.png)
 
 **Query 2 — Statistics on price by room type:**
 
-![Query 2](images/query_2.png)
+![Query 2](images/Query_2.png)
 
 **Query 3 — Professional hosts with 10+ listings:**
 
-![Query 3](images/query_3.png)
+![Query 3](images/Query_3.png)
 
 **Query 4 — Most expensive vs. cheapest neighborhoods:**
 
-![Query 4](images/query_4.png)
+![Query 4](images/Query_4.png)
 
 **Query 5 — Metrics by price range:**
 
-![Query 5](images/query_5.png)
+![Query 5](images/Query_5.png)
 
 #### Tableau Dashboard
 
@@ -177,11 +177,11 @@ Analizar el mercado de alquiler turístico en Madrid mediante los datos de listi
 
 El precio mediano es de unos 50€/noche, con fuerte asimetría a la derecha, es decir, la mayoría son asequibles con algunos listings de lujo. Entire home/apt es la opción más popular (~11.300 listings), seguida de Private room (~7.800). Las opciones de habitaciones compartidas y de hotel son marginal. Los barrios con más listings son Embajadores, Universidad y Palacio, todos centros céntricos con alta actividad turística. También destaca la existencia de listings con estancias mínimas de 30 noches, lo que sugiere la existencia de alquileres a largo plazo.
 
-![Análisis Univariante](images/01_analisis_univariante.png)
+![Análisis Univariante](images/01_Analisis_Univariante.png)
 
 Distribución de precio por tipo de habitación y top 20 barrios más caros (mediana, min. 50 listings):
 
-![Análisis Bivariante](images/02_analisis_bivariante.png)
+![Análisis Bivariante](images/01_Analisis_Bivariante.png)
 
 Distribución geográfica de los listings en Madrid, coloreados por precio:
 
@@ -207,23 +207,23 @@ Se han realizado cinco queries con propósitos analíticos:
 
 **Query 1 — Top 20 barrios por número de listings:**
 
-![Query 1](images/query_1.png)
+![Query 1](images/Query_1.png)
 
 **Query 2 — Estadísticas de precio por tipo de habitación:**
 
-![Query 2](images/query_2.png)
+![Query 2](images/Query_2.png)
 
 **Query 3 — Hosts profesionales con 10+ propiedades:**
 
-![Query 3](images/query_3.png)
+![Query 3](images/Query_3.png)
 
 **Query 4 — Barrios más caros vs más baratos:**
 
-![Query 4](images/query_4.png)
+![Query 4](images/Query_4.png)
 
 **Query 5 — Métricas por rango de precio:**
 
-![Query 5](images/query_5.png)
+![Query 5](images/Query_5.png)
 
 #### Dashboard en Tableau
 
