@@ -191,7 +191,7 @@ Distribución geográfica de los listings en Madrid, coloreados por precio:
 
 Las características numéricas muestran muy baja correlación con el precio (todas menores a 0.04), lo que ratifica que el precio depende principalmente de características categóricas como tipo de habitación y barrio.
 
-![Matriz de Correlaciones](images/04_correlaciones.png)
+![Matriz de Correlaciones](images/04_matriz_de_correlaciones.png)
 
 #### Machine Learning
 
