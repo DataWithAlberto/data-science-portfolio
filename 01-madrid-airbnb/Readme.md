@@ -35,12 +35,17 @@ To analyze the short-term rentals market in Madrid by using Airbnb listing data.
 ├── 01_madrid_airbnb_eda_ml.ipynb    # Main notebook (EDA + ML)
 ├── queries.sql                      # SQL queries (Snowflake)
 ├── images/                          # Generated plots
-│   ├── 01_univariante.png
-│   ├── 02_bivariante.png
+│   ├── 01_analisis_univariante.png
+│   ├── 02_analisis_bivariante.png
 │   ├── 03_mapa_geografico.png
 │   ├── 04_correlaciones.png
 │   ├── 05_modelo_resultados.png
-│   └── 06_residuos.png
+│   ├── 06_residuos.png
+│   ├── query_1.png
+│   ├── query_2.png
+│   ├── query_3.png
+│   ├── query_4.png
+│   └── query_5.png
 └── README.md
 ```
 
@@ -48,36 +53,59 @@ To analyze the short-term rentals market in Madrid by using Airbnb listing data.
 
 #### EDA
 
-- Median price is approximately 50€ per night. However, the data is heavily skewed to the right. Most of the listings are affordable, while a few are luxury listings.
-- Entire home/apt is the dominant type of accommodation (~11,300 listings), followed by Private room (~7,800).
-- Most of the listings are concentrated in the neighborhoods of Embajadores, Universidad, and Palacio. These are the central areas of Madrid.
-- There is a cluster of listings where the minimum stay is 30 nights. This indicates the presence of long-term rentals.
+Median price is approximately 50€ per night. However, the data is heavily skewed to the right. Most of the listings are affordable, while a few are luxury listings. Entire home/apt is the dominant type of accommodation (~11,300 listings), followed by Private room (~7,800). Most of the listings are concentrated in the neighborhoods of Embajadores, Universidad, and Palacio. There is a cluster of listings where the minimum stay is 30 nights, indicating the presence of long-term rentals.
+
+![Univariate Analysis](images/01_analisis_univariante.png)
+
+Price distribution by room type and top 20 most expensive neighborhoods (median, min. 50 listings):
+
+![Bivariate Analysis](images/02_analisis_bivariante.png)
+
+Geographic distribution of listings in Madrid, colored by price:
+
+![Geographic Map](images/03_mapa_geografico.png)
+
+#### Correlations
+
+Numerical values show very low correlation with price (all values below 0.04), reinforcing that price is highly influenced by categorical attributes such as room type and neighborhood.
+
+![Correlation Matrix](images/04_correlaciones.png)
 
 #### Machine Learning
 
-- Numerical values show very low correlation with price (all values below 0.04), reinforcing that price is highly influenced by categorical attributes such as room type and neighborhood.
-- Random Forest provided the best results: R² = 0.35, MAE = 53€.
-- Location and host listing count were found to be the most important features, followed by reviews per month and neighborhood frequency.
-- Linear Regression performed poorly (R² = 0.07), as expected from the non-linear relationship between price and attributes.
-- R² = 0.35 is a reasonable value for this data set, as price is influenced by factors not included in this data set (photos, amenities, quality of text, etc.).
+Random Forest provided the best results: R² = 0.35, MAE = 53€. Location and host listing count were found to be the most important features. Linear Regression performed poorly (R² = 0.07), as expected from the non-linear relationship between price and attributes. R² = 0.35 is a reasonable value for this data set, as price is influenced by factors not included in this data set (photos, amenities, quality of text, etc.).
+
+![Model Results](images/05_modelo_resultados.png)
+
+![Residuals](images/06_residuos.png)
 
 #### SQL (Snowflake)
 
 Five analytical queries were made on this data set:
-- Top neighborhoods by listing count
-- Statistics on price by room type
-- Professional hosts with 10+ listings
-- Most expensive vs. cheapest neighborhoods
-- Metrics by price range
+
+**Query 1 — Top 20 neighborhoods by listing count:**
+
+![Query 1](images/query_1.png)
+
+**Query 2 — Statistics on price by room type:**
+
+![Query 2](images/query_2.png)
+
+**Query 3 — Professional hosts with 10+ listings:**
+
+![Query 3](images/query_3.png)
+
+**Query 4 — Most expensive vs. cheapest neighborhoods:**
+
+![Query 4](images/query_4.png)
+
+**Query 5 — Metrics by price range:**
+
+![Query 5](images/query_5.png)
 
 #### Tableau Dashboard
 
-An interactive dashboard was created:
-- Price distribution map of Madrid by geographic distribution
-- Top 20 most expensive neighborhoods by average price
-- Distribution of room type (Treemap)
-- Reviews vs. Price
-- Global filters by room type, price range, and district
+An interactive dashboard was created with price map, top 20 neighborhoods, room type distribution, reviews vs price, and global filters by room type, price range, and district.
 
 📊 [View the dashboard on Tableau Public](https://public.tableau.com/app/profile/alberto.llaneza.tabares/viz/Airbnb-Madrid/MadridAirbnbMarketAnalysis2021)
 
@@ -129,12 +157,17 @@ Analizar el mercado de alquiler turístico en Madrid mediante los datos de listi
 ├── 01_madrid_airbnb_eda_ml.ipynb    # Notebook principal (EDA + ML)
 ├── queries.sql                      # Queries SQL (Snowflake)
 ├── images/                          # Gráficos generados
-│   ├── 01_univariante.png
-│   ├── 02_bivariante.png
+│   ├── 01_analisis_univariante.png
+│   ├── 02_analisis_bivariante.png
 │   ├── 03_mapa_geografico.png
 │   ├── 04_correlaciones.png
 │   ├── 05_modelo_resultados.png
-│   └── 06_residuos.png
+│   ├── 06_residuos.png
+│   ├── query_1.png
+│   ├── query_2.png
+│   ├── query_3.png
+│   ├── query_4.png
+│   └── query_5.png
 └── README.md
 ```
 
@@ -142,37 +175,59 @@ Analizar el mercado de alquiler turístico en Madrid mediante los datos de listi
 
 #### EDA
 
-- El precio mediano es de unos 50€/noche, con fuerte asimetría a la derecha, es decir, la mayoría son asequibles con algunos listings de lujo.
-- Entire home/apt es la opción más popular (~11.300 listings), seguida de Private room (~7.800).
-- Las opciones de habitaciones compartidas y de hotel son marginal.
-- Los barrios con más listings son Embajadores, Universidad y Palacio, todos centros céntricos con alta actividad turística.
-- También destaca la existencia de listings con estancias mínimas de 30 noches, lo que sugiere la existencia de alquileres a largo plazo.
+El precio mediano es de unos 50€/noche, con fuerte asimetría a la derecha, es decir, la mayoría son asequibles con algunos listings de lujo. Entire home/apt es la opción más popular (~11.300 listings), seguida de Private room (~7.800). Las opciones de habitaciones compartidas y de hotel son marginal. Los barrios con más listings son Embajadores, Universidad y Palacio, todos centros céntricos con alta actividad turística. También destaca la existencia de listings con estancias mínimas de 30 noches, lo que sugiere la existencia de alquileres a largo plazo.
+
+![Análisis Univariante](images/01_analisis_univariante.png)
+
+Distribución de precio por tipo de habitación y top 20 barrios más caros (mediana, min. 50 listings):
+
+![Análisis Bivariante](images/02_analisis_bivariante.png)
+
+Distribución geográfica de los listings en Madrid, coloreados por precio:
+
+![Mapa Geográfico](images/03_mapa_geografico.png)
+
+#### Correlaciones
+
+Las características numéricas muestran muy baja correlación con el precio (todas menores a 0.04), lo que ratifica que el precio depende principalmente de características categóricas como tipo de habitación y barrio.
+
+![Matriz de Correlaciones](images/04_correlaciones.png)
 
 #### Machine Learning
 
-- Las características numéricas muestran muy baja correlación con el precio (todas menores a 0.04), lo que ratifica que el precio depende principalmente de características categóricas como tipo de habitación y barrio.
-- Random Forest ha mostrado las mejores prestaciones: R² = 0.35 y MAE = 53€.
-- Las features más importantes son la ubicación (latitud/longitud) y número de listings del host, seguidas de reviews por mes y barrio.
-- La Regresión Lineal ha mostrado unas prestaciones bajas (R² = 0.07), lo que ratifica la no linealidad de la relación con el precio.
-- Un R² = 0.35 es realista ya que depende del precio de muchos factores no disponibles en nuestros datos: fotos, amenities, calidad de la descripción, estacionalidad.
+Random Forest ha mostrado las mejores prestaciones: R² = 0.35 y MAE = 53€. Las features más importantes son la ubicación (latitud/longitud) y número de listings del host, seguidas de reviews por mes y barrio. La Regresión Lineal ha mostrado unas prestaciones bajas (R² = 0.07), lo que ratifica la no linealidad de la relación con el precio. Un R² = 0.35 es realista ya que depende del precio de muchos factores no disponibles en nuestros datos: fotos, amenities, calidad de la descripción, estacionalidad.
+
+![Resultados del Modelo](images/05_modelo_resultados.png)
+
+![Residuos](images/06_residuos.png)
 
 #### SQL (Snowflake)
 
 Se han realizado cinco queries con propósitos analíticos:
-- Top barrios por número de listings
-- Estadísticas de precio por tipo de habitación
-- Hosts profesionales con 10+ propiedades
-- Barrios más caros vs más baratos
-- Métricas por rango de precio: reviews, disponibilidad, noches mínimas
+
+**Query 1 — Top 20 barrios por número de listings:**
+
+![Query 1](images/query_1.png)
+
+**Query 2 — Estadísticas de precio por tipo de habitación:**
+
+![Query 2](images/query_2.png)
+
+**Query 3 — Hosts profesionales con 10+ propiedades:**
+
+![Query 3](images/query_3.png)
+
+**Query 4 — Barrios más caros vs más baratos:**
+
+![Query 4](images/query_4.png)
+
+**Query 5 — Métricas por rango de precio:**
+
+![Query 5](images/query_5.png)
 
 #### Dashboard en Tableau
 
-Se ha realizado un dashboard interactivo con las siguientes características:
-- Mapa de precios de Madrid con distribución geográfica por rango de precio
-- Top 20 barrios más caros por precio medio
-- Distribución por tipo de habitación (treemap)
-- Reviews vs Precio (scatter plot)
-- Filtros globales por tipo de habitación, rango de precio y distrito
+Se ha realizado un dashboard interactivo con mapa de precios, top 20 barrios, distribución por tipo de habitación, reviews vs precio, y filtros globales por tipo de habitación, rango de precio y distrito.
 
 📊 [Ver el dashboard en Tableau Public](https://public.tableau.com/app/profile/alberto.llaneza.tabares/viz/Airbnb-Madrid/MadridAirbnbMarketAnalysis2021)
 
