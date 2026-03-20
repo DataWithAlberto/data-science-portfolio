@@ -97,7 +97,7 @@ Five analytical queries were made on this data set:
 
 **Query 4 — Most expensive vs. cheapest neighborhoods:**
 
-![Query 4](01-madrid-airbnb/images/Query 4.png)
+![Query 4](images/Query_4.png)
 
 **Query 5 — Metrics by price range:**
 
